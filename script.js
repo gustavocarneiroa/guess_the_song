@@ -1,5 +1,3 @@
-import { music } from "./music.js";
-
 const musicLetter = music.trim();
 
 musicLetter.split('\n').forEach( (sentence, index) => {

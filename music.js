@@ -1,4 +1,4 @@
-export const music = `
+const music = `
 I'm tired of being what you want me to be
 Feeling so faithless, lost under the surface
 Don't know what you're expecting of me
