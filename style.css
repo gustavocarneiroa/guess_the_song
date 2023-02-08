@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins&display=swap');
+*, *::after, *::before {
+  box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
+}
+
+body {
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1em;
+    font-size: clamp(.5rem, 2.5vmin, 1.5rem);
+}
+
+img {
+  height: 70px;
+}
+
+#app {
+  display: flex;
+  justify-content: space-between;
+}
+
+[data-sentence]::before {
+  content: attr(data-sentence) " ";
+  font-weight: lighter;
+  color: #cccccc74;
+}
+
+.word {
+    margin: .3rem;
+    color: #fefefe;
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+}
+
+#events {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#score {
+  color: white;
+  font-size: 3.33rem;
+}
+
+#listener {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#listener > span {
+  color: white;
+}
+
+#listener > span > strong {
+  color: #f1a0a8
+}
+
+.sticky-header {
+    background-color: #262626;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
+}
+
+.sticky-header > input {
+    margin: 10px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
