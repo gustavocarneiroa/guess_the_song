@@ -22,7 +22,26 @@
             <div id="listener"></div>
         </div>
     </div>
-    <script src="lyrics.js"></script>
+    <script>
+        async function getMusic() {
+            const search = new URLSearchParams(window.location.search);
+            const music = search.get('music');
+            let url = '';
+            if(search.get('isif') == 1) {
+                url = "https://www.lyrics.com/lyric-lf/" + music; 
+            } else {
+                url = "https://www.lyrics.com/lyric/" + music; 
+            }
+            return await fetch(url).then( data => {
+                        return data.text()
+                    }).then( html => {
+                        const parser = new DOMParser();
+                        const doc = parser.parseFromString(html, 'text/html')
+
+                        return doc.querySelector('pre#lyric-body-text').innerText
+                    })
+        };
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

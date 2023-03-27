@@ -1,6 +1,5 @@
-const musicLetter = music.trim();
-
-musicLetter.split('\n').forEach( (sentence, index) => {
+;( async () => {const musicLetter = await getMusic();
+musicLetter.trim().split('\n').forEach( (sentence, index) => {
     if(['', '\n'].includes(sentence.trim())) return;
 
     const sentenceElement = createSentenceElement(index)
@@ -74,4 +73,4 @@ function handleAttempt(event) {
         setTimeout(() => alert('YOU WIN'), 1000);
     }
 }
-
+})()
