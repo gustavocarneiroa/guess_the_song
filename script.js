@@ -11,7 +11,7 @@ musicLetter.split('\n').forEach( (sentence, index) => {
 
 const repeatedWords = musicLetter.split('\n').join(' ').split(' ').map(w => sanitizeWord(w));
 let words = [...new Set(musicLetter.split('\n').join(' ').split(' '))].map(w => sanitizeWord(w)).filter(w => w);
-document.getElementById('inputText').addEventListener('input', handleKeyUp)
+document.getElementById('inputText').addEventListener('keyup', handleAttempt)
 document.getElementById('total').innerText = words.length;
 
 
@@ -57,8 +57,11 @@ function incrementCounter() {
     counter.innerHTML = Number(counter.innerHTML ) + 1;
 }
 
-function handleKeyUp(event) {
-    const word = sanitizeWord(event.srcElement.value);
+function handleAttempt(event) {
+    if(event.key != "Enter") {
+        return 
+    }
+    const word = sanitizeWord(document.getElementById("inputText").value);
     if(words.includes(word)) {
         words = words.filter( w => w !== word )
         responseFound(word)
